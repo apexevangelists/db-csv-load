@@ -305,7 +305,7 @@ func createTable(db *sql.DB, csv GenericCSV) {
 /********************************************************************************/
 func insertRecord(db *sql.DB, statement string, totalRowCount int) {
 	insertedRowCount = insertedRowCount + 1
-	logger.Debugf("Importing Record: (%d / %d", insertedRowCount, totalRowCount)
+	logger.Debugf("Importing Record: (%d / %d)", insertedRowCount, totalRowCount)
 
 	_, err := db.Exec(statement)
 	if err != nil {
