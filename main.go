@@ -75,7 +75,7 @@ func parseFlags() {
 	flag.StringVar(&config.table, "t", "", "Table to import into")
 
 	flag.BoolVar(&config.debugMode, "debug", false, "Debug mode (default=false)")
-	flag.StringVar(&config.connectionConfig, "connection", "", "Confguration file for connection")
+	flag.StringVar(&config.connectionConfig, "connection", "", "Configuration file for connection")
 
 	flag.StringVar(&connection.dbConnectionString, "db", "", "Database Connection, e.g. user/password@host:port/sid")
 
