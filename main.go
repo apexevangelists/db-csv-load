@@ -294,11 +294,13 @@ func process(db *sql.DB, csv GenericCSV) {
 func createTable(db *sql.DB, csv GenericCSV) {
 	createTableCMD := getCreateTableCMD(csv)
 
-	logger.Debugf("Creating Table")
 	_, err := db.Exec(createTableCMD)
 
 	if err != nil {
-		fmt.Sprintf("error in createTable: %s\n", err)
+		logger.Debugf("Table exists - inserting data")
+		//fmt.Sprintf("error in createTable: %s\n", err)
+	} else {
+		logger.Debugf("Creating Table")
 	}
 }
 
